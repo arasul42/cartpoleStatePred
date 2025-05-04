@@ -1,0 +1,14 @@
+{
+    "avg_percent_rmse": {
+        "Cart Position": 0.24603727894524735,
+        "Cart Velocity": 3.863793760538101,
+        "Pole Angle": 3.8955121136239272,
+        "Angular Velocity": 3.289414644241333
+    },
+    "avg_percent_tracking_mae": {
+        "Cart Position": 5.369840810696284,
+        "Cart Velocity": 3.0423885211348534,
+        "Pole Angle": 1.197606859880201,
+        "Angular Velocity": 2.708856761455536
+    }
+}

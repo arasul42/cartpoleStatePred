@@ -1,0 +1,14 @@
+{
+    "MSE": {
+        "Cart Position": 1.4605110663978849e-05,
+        "Cart Velocity": 0.004854785278439522,
+        "Pole Angle": 5.3768253565067425e-05,
+        "Pole Velocity At Tip": 0.011808791197836399
+    },
+    "RMSE": {
+        "Cart Position": 0.00382166332565248,
+        "Cart Velocity": 0.06967628747224808,
+        "Pole Angle": 0.007332684006541967,
+        "Pole Velocity At Tip": 0.1086682602763176
+    }
+}

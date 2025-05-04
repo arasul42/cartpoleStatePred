@@ -1,0 +1,23 @@
+{
+    "episode": 8,
+    "mean_abs_error": {
+        "Cart Position": 0.009628352709114552,
+        "Cart Velocity": 0.12679603695869446,
+        "Pole Angle": 0.013382820412516594,
+        "Angular Velocity": 0.17370274662971497
+    },
+    "mean_rmse": {
+        "Cart Position": 0.012448505498468876,
+        "Cart Velocity": 0.16351529955863953,
+        "Pole Angle": 0.016711512580513954,
+        "Angular Velocity": 0.21815890073776245
+    },
+    "tracking_error": {
+        "Cart Position": 0.3712936341762543,
+        "Cart Velocity": 0.1559898853302002,
+        "Pole Angle": 0.010834144428372383,
+        "Angular Velocity": 0.1662704050540924
+    },
+    "control_effort": 504.0,
+    "action_switches": 350
+}
