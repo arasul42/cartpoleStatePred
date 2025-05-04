@@ -1,9 +1,0 @@
-{
-    "epochs": 100,
-    "batch_size": 32,
-    "patience": 10,
-    "learning_rate": 0.001,
-    "dataset_size": 200,
-    "seq_length": 4,
-    "image_size": 64
-}
