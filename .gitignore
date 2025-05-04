@@ -1,0 +1,4 @@
+logs/
+cartpole_dae/experiments/
+cartpole_dae/tensorboard_logs/
+cartpole_dae/tensorboard_logs_*
