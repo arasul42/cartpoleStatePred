@@ -236,6 +236,8 @@ from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import EvalCallback
 
+
+
 # 🎯 Shaped Reward Wrapper for Original CartPole
 class ShapedCartPoleRewardWrapper(gym.Wrapper):
     def __init__(self, env, switch_penalty=0.05):
@@ -268,9 +270,14 @@ class ShapedCartPoleRewardWrapper(gym.Wrapper):
 
 # ==== Environment ====
 def make_env():
-    base_env = gym.make("CartPole-v1")
+    base_env = gym.make("CartPole-v1", render_mode="rgb_array")  # ✅ RGB array
     shaped_env = ShapedCartPoleRewardWrapper(base_env)
     return Monitor(shaped_env)
+
+
+
+
+
 
 env = DummyVecEnv([make_env])
 eval_env = DummyVecEnv([make_env])
@@ -278,7 +285,7 @@ eval_env = DummyVecEnv([make_env])
 # ==== Evaluation Callback ====
 eval_callback = EvalCallback(
     eval_env,
-    best_model_save_path="./logs/best_model/",
+    best_model_save_path="./logs/best_model_video/",
     log_path="./logs/",
     eval_freq=5000,
     n_eval_episodes=5,

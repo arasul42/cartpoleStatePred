@@ -115,7 +115,16 @@ for episode in range(NUM_EPISODES):
 
         frame = env.render()
         frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+
+        # Overlay true and predicted states
+        true_text = f"True: pos={obs[0]:+.2f}, vel={obs[1]:+.2f}, angle={obs[2]:+.2f}, ang_vel={obs[3]:+.2f}"
+        pred_text = f"Pred: pos={pred_state[0]:+.2f}, vel={pred_state[1]:+.2f}, angle={pred_state[2]:+.2f}, ang_vel={pred_state[3]:+.2f}"
+
+        cv2.putText(frame_bgr, true_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
+        cv2.putText(frame_bgr, pred_text, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
+
         record_writer.write(frame_bgr)
+
 
         resized = cv2.resize(frame, (64, 64))
         preprocessed = resized.transpose(2, 0, 1).astype(np.float32) / 255.0

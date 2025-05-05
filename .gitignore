@@ -4,3 +4,9 @@ cartpole_dae/tensorboard_logs/
 cartpole_dae/tensorboard_logs_*
 cartpole_dae/cartpole_sequences_200k.npz
 cartpole_dae/dvae_seq_cartpole.npz
+dqn_logs/
+dqn_tb_logs/
+frames/
+particle_filter/
+tensorboard_logs/
+ignore/

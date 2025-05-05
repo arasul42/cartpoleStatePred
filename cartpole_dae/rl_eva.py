@@ -1,3 +1,4 @@
+import cv2
 import gymnasium as gym
 import numpy as np
 import matplotlib.pyplot as plt
@@ -54,11 +55,27 @@ all_mae = []
 
 # --- Evaluation loop ---
 for run in range(N_EPISODES):
-    env = gym.make("CartPole-v1", render_mode='human')
+    env = gym.make("CartPole-v1", render_mode='rgb_array')
     obs, _ = env.reset()
     states, actions = [], []
 
+
+
+    video_path = os.path.join(full_state_rl_path, f"episode_{run + 1}.avi")
+    frame = env.render()
+    frame_shape = frame.shape  # (H, W, C)
+    record_writer = cv2.VideoWriter(
+        video_path,
+        cv2.VideoWriter_fourcc(*'XVID'),
+        30,
+        (frame_shape[1], frame_shape[0])  # width, height
+    )
+
     for t in range(timesteps):
+
+        frame = env.render()
+        frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+        record_writer.write(frame_bgr)
         action, _ = model.predict(obs, deterministic=True)
         obs, reward, done, truncated, _ = env.step(action)
         states.append(obs)
